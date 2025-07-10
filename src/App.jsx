@@ -16,10 +16,12 @@ export const App = () => {
 
   // DON'T change the code below
   const increase = () => {
-    addOne();
-    if (count % 5 === 0) {
-      add100();
-    }
+    setCount(prevCount => {
+
+      const newCount = prevCount + 1;
+
+      return prevCount % 5 === 0 ? newCount + 100 : newCount;
+    });
   };
 
   return (
